@@ -1,0 +1,14 @@
+# Compilados
+*.exe
+*.out
+*.o
+
+# VS Code
+.vscode/
+
+# Temporários
+*.tmp
+
+# OS
+Thumbs.db
+.DS_Store
