@@ -1,29 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 
 int main(){
     setlocale(LC_ALL, "pt_BR.UTF-8");
     // criar uma validação na qual caso a parcela seja superior a um terço do salario não deixe financiar.
     float salarioCliente, valorPagoMes;
-    int valorDesejado, escolha, qtdParcela, valorAutomovel;
-    char nomeCliente[100], cpfCliente[20];
+    int valorDesejado, escolha, qtdParcela, valorAutomovel, tamanho;
+    char nome[100], cpf[20];
 
     printf("Bem Vindo a WebCars, Chegou a hora de comprar a tão sonhada Conquista. \n");
     printf("Para podermos começar, primeiro precisamos que preencha o cadastro a baixo. \n");
 
     printf("Digite seu Nome: ");
-    scanf(" %[^\n]", &nomeCliente);
+    scanf(" %[^\n]", &nome);
 
-    printf("Digite seu CPF: ");
-    scanf(" %[^\n]", &cpfCliente);
-    //Adicionar Validação de cpf: veja se o cpf informado é apenas número e que tem 11 digitos
+    do{
+        printf("Digite o CPF (11 numeros): ");
+        scanf(" %[^\n]", &cpf);
+        //Adicionar Validação de cpf: veja se o cpf informado é apenas número e que tem 11 digitos
+        tamanho = strlen(cpf);
 
+        if (tamanho != 11){
+            printf("Erro: Digite 11 algarismos. Você digitou %d.\n", tamanho);
+
+        }
+
+        
+        }while (tamanho != 11);
+            
+        
+        
     printf("Digite seu salario: ");
     scanf("%f", &salarioCliente);
     
 
-    printf("Parábens %s!\nAgora que está Cadastrado, podemos finalmente escolher o seu Automovel.\n", nomeCliente);
+    printf("Parábens %s!\nAgora que está Cadastrado, podemos finalmente escolher o seu Automovel.\n", nome);
 
     printf("Me diga o valor do carro que esta disposto a pagar no seu automovel: ");
     scanf("%d", &valorDesejado);
@@ -43,7 +56,7 @@ int main(){
         switch (escolha){
         case 1:
             valorAutomovel = 11000;
-            printf("Otima escolha, Você vai pagar a vista(1) ou financiar(2)?");
+            printf("Otima escolha, Você vai pagar a vista(1) ou financiar(2)? \n");
             scanf("%d", &escolha);
             switch (escolha){
             case 1 :
