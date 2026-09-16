@@ -43,7 +43,7 @@ int main(){
         switch (escolha){
         case 1:
             valorAutomovel = 11000;
-            printf("Otima escolha, Você vai pagar a vista(1) ou financiar(2)? \n");
+            printf("Otima escolha, Você vai pagar a vista(1) ou financiar(2)?");
             scanf("%d", &escolha);
             switch (escolha){
             case 1 :
@@ -100,7 +100,7 @@ int main(){
             break;
         }
     
-    
+
     }
 
 
