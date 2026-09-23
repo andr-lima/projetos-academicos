@@ -8,11 +8,12 @@ int main(){
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
     float salarioCliente, valorPagoMes, valorAutomovel;
-    int escolhaCarro, escolhaPagamento, qtdParcela, i;
+    int escolhaCarro, escolhaPagamento, qtdParcela, i, aprovado;
     char nome[100], cpf[20], continuar;
 
     do{
         system("cls");
+        aprovado = 1;
         i = 0;
         
         printf("Bem Vindo a WebCars, Chegou a hora de comprar a tão sonhada Conquista. \n");
@@ -83,6 +84,8 @@ int main(){
                 valorPagoMes = valorAutomovel / qtdParcela ;
                 if (valorPagoMes > salarioCliente * 0.33){
                     printf("Infelizmente você não esta apto a este serviço =< \nPor motivos de: Renda insuficiente");
+                    aprovado = 0;
+
                 }else{
                     printf("Você está apto a este serviço => \nVá ao proximo caixa para concluir o pagamento!");
                 }
@@ -130,6 +133,7 @@ int main(){
                 if (valorPagoMes > salarioCliente * 0.33){
 
                     printf("Infelizmente você não esta apto a este serviço =< \nPor motivos de: Renda insuficiente");
+                    aprovado = 0;
 
                 }else{
 
@@ -178,7 +182,7 @@ int main(){
                 if (valorPagoMes > salarioCliente * 0.33){
 
                     printf("Infelizmente você não esta apto a este serviço =< \nPor motivos de: Renda insuficiente");
-                    exit(0);
+                    aprovado = 0;
                 }else{
 
                     printf("Você está apto a este serviço => \nVá ao proximo caixa para concluir o pagamento!");
@@ -197,7 +201,7 @@ int main(){
             break;
         }
 
-        Sleep(3000);
+        Sleep(5000);
         
         system("cls");
 
@@ -218,7 +222,11 @@ int main(){
 
                     case 2:
 
-                        printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
+                        if(aprovado != 0){
+                            printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
+                        }else{
+                            printf("Financiamento reprovado por renda insuficiente.\n");
+                        }
                         break;
 
                     default:
@@ -238,7 +246,11 @@ int main(){
 
                     case 2:
                 
-                        printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
+                        if(aprovado != 0){
+                            printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
+                        }else{
+                            printf("Financiamento reprovado por renda insuficiente.\n");
+                        }
                         break;
 
                     default:
@@ -257,9 +269,12 @@ int main(){
                         break;
 
                     case 2:
-
-                        printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
-                        break;
+                        if(aprovado != 0){
+                            printf("Você escolheu financiar em %d meses e pagará R$%.2f por mês.\n", qtdParcela, valorPagoMes);
+                        }else{
+                            printf("Financiamento reprovado por renda insuficiente.\n");
+                        }
+                            break;
 
                     default:
                     break;
