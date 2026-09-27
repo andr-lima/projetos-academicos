@@ -27,10 +27,7 @@ int main(){
             printf("Digite o CPF (11 numeros): ");
             scanf(" %[^\n]", cpf);
             
-            if (strlen(cpf) == 1){
-                break;
-            }
-
+           
             if (strlen(cpf) != 11){
                 printf("Erro: Digite 11 algarismos.\n");
 
