@@ -1,13 +1,31 @@
-# Compilados
+# Compilados e bibliotecas
 *.exe
 *.out
 *.o
+*.a
+*.so
+*.dll
+*.dylib
 
-# VS Code
+# Diretórios de compilação e execução
+build/
+output/
+bin/
+
+# VS Code & IDEs
 .vscode/
+.idea/
 
-# Temporários
+# Temporários do Code Runner
+tempCodeRunnerFile.c
+tempCodeRunnerFile
 *.tmp
+
+# Compactados
+*.zip
+*.tar.gz
+*.rar
+*.7z
 
 # OS
 Thumbs.db
